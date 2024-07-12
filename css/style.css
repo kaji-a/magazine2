@@ -196,7 +196,7 @@ body {
   }
 }
 .mv {
-  background-image: url(../../img/mv-bg@2x.jpg);
+  background-image: url("https://github.com/kaji-a/magazine2/blob/main/img/mv-bg@2x.jpg?raw=true");
   height: 100vh;
   background-repeat: no-repeat;
   margin-left: 200px;
