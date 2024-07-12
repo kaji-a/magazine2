@@ -1,0 +1,347 @@
+body {
+  font-family: "Radio Canada", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    align-items: center;
+  }
+}
+.header-logo {
+  text-align: center;
+  margin-top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .header-logo {
+    margin-top: 0px;
+  }
+}
+.header-sns {
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 768px) {
+  .header-sns {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+
+.pc-only {
+  margin: 50px 0;
+  flex-grow: 1;
+}
+.pc-only ul {
+  height: 90%;
+}
+.pc-only li {
+  list-style: none;
+  margin: 20px 0;
+}
+.pc-only li a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 20px;
+}
+
+.sp-only ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.sp-only li {
+  list-style: none;
+  margin: 20px 0;
+  text-align: center;
+}
+.sp-only li a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+  .sp-only {
+    display: block;
+  }
+  .gnav-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  #gnav-open {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  #gnav-open span {
+    position: absolute;
+    top: 18px;
+    right: 8px;
+  }
+  #gnav-open span,
+  #gnav-open span::before,
+  #gnav-open span::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    border-radius: 3px;
+    background: #000;
+    display: block;
+  }
+  #gnav-open span::before {
+    transform: translateY(-8px);
+  }
+  #gnav-open span::after {
+    transform: translateY(8px);
+  }
+  #gnav-close {
+    cursor: pointer;
+  }
+  #gnav-input:checked ~ #gnav-close {
+    position: absolute;
+    z-index: 102;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+  #gnav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    transition: 0.5s ease-in-out;
+    transform: translateX(105%);
+  }
+  #gnav-input:checked ~ #gnav-content {
+    transform: translateX(0);
+  }
+  #gnav-input:checked ~ #gnav-open span::before {
+    transform: rotate(45deg);
+    background: #000;
+    z-index: 101;
+    transition: 0.8s;
+  }
+  #gnav-input:checked ~ #gnav-open span::after {
+    transform: rotate(-45deg);
+    background: #000;
+    z-index: 101;
+    transition: 0.8s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .gnav-unshown {
+    display: none;
+  }
+  .gnav-unshown {
+    opacity: 0;
+    animation-name: gnav-unshown;
+    animation-delay: 0.4s;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes gnav-unshown {
+    100% {
+      opacity: 1;
+    }
+  }
+  .gnav-unshown img {
+    position: relative;
+    right: 5px;
+    top: -5px;
+  }
+}
+.mv {
+  background-image: url(../../img/mv-bg@2x.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  margin-left: 200px;
+  background-size: cover;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .mv {
+    margin-left: 0;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+  }
+}
+.mv-img {
+  height: 90vh;
+  max-height: 700px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .mv-img {
+    height: 80vh;
+    max-height: 600px;
+    width: auto;
+  }
+}
+.mv-txt {
+  position: absolute;
+  bottom: 80px;
+  left: 30px;
+}
+.mv-txt p {
+  display: inline-block;
+  background: #fff;
+  margin: 5px 0;
+}
+.mv-txt p:nth-of-type(2) {
+  font-size: 3.4vw;
+}
+@media screen and (max-width: 768px) {
+  .mv-txt p:nth-of-type(2) {
+    font-size: 1.5rem;
+  }
+}
+.mv-txt p:last-of-type {
+  font-size: 3.4vw;
+}
+@media screen and (max-width: 768px) {
+  .mv-txt p:last-of-type {
+    font-size: 1.5rem;
+  }
+}
+
+.backnumbers {
+  margin-left: 200px;
+  background-color: #f8f8f8;
+}
+@media screen and (max-width: 768px) {
+  .backnumbers {
+    margin-left: 0;
+  }
+}
+.backnumbers-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 50px 30px;
+}
+.backnumbers-title p {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+  .backnumbers-title p {
+    font-size: 1.2rem;
+  }
+}
+.backnumbers-title p:last-of-type {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+.backnumbers-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (max-width: 768px) {
+  .backnumbers-list ul {
+    display: block;
+  }
+}
+.backnumbers-list ul li {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .backnumbers-list ul li {
+    padding: 20px;
+  }
+}
+.backnumbers-list ul li:first-of-type {
+  background-color: #ecf4f9;
+}
+.backnumbers-list ul li:nth-of-type(2) {
+  background-color: #fbf3d2;
+}
+.backnumbers-list ul li:nth-of-type(3) {
+  background-color: #f9f2eb;
+}
+.backnumbers-list ul li:nth-of-type(4) {
+  background-color: #fae8c2;
+}
+.backnumbers-list ul li:nth-of-type(5) {
+  background-color: #e2efe7;
+}
+.backnumbers-list ul li:last-of-type {
+  background-color: #f2f5fb;
+}
+.backnumbers-list ul li img {
+  width: 50%;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+}
+.backnumbers-list-img {
+  text-align: center;
+  margin-top: 60px;
+}
+.backnumbers-list-txt {
+  margin: 60px auto;
+  padding: 0 40px;
+}
+@media screen and (max-width: 768px) {
+  .backnumbers-list-txt {
+    margin: 50px 0;
+  }
+}
+.backnumbers-list-txt p:first-of-type {
+  font-size: 0.75rem;
+}
+.backnumbers-list-txt p:nth-of-type(2) {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.backnumbers-list-txt p:last-of-type {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,13 @@
+{
+    "svg.preview.background": "transparent",
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../css",
+            "savePathReplacementPairs": null
+        }
+    ],
+    "liveSassCompile.settings.watchOnLaunch": true
+}

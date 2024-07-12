@@ -1,0 +1,12 @@
+// ミックスイン
+@use './variables' as *;
+
+// メディアクエリ
+@mixin mq($breakpoint: medium) {
+  @if ($breakpoint ==medium) {
+    @media screen and (max-width: map-get($breakpoints, md)) {
+      @content;
+    }
+  }
+
+}

@@ -1,0 +1,163 @@
+@use '../mixins' as *;
+
+.mv{
+    background-image: url(../../img/mv-bg@2x.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    margin-left: 200px;
+    background-size: cover;
+    position: relative;
+
+    @include mq{
+        margin-left: 0;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+    }
+    
+&-img{
+    height: 90vh;
+    max-height: 700px;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @include mq{
+        height: 80vh;
+        max-height: 600px;
+        width: auto;
+    }
+}
+
+&-txt{
+    position:absolute;
+    bottom:80px;
+    left: 30px;
+}
+
+&-txt p{
+    display: inline-block;
+   background: #fff; 
+   margin: 5px 0;
+  
+}
+
+&-txt p:first-of-type{
+  
+}
+
+&-txt p:nth-of-type(2){
+    font-size: 3.4vw;
+
+    @include mq{
+        font-size: 1.5rem;
+    }
+    
+}
+
+&-txt p:last-of-type{ 
+    font-size: 3.4vw;
+
+    @include mq{
+        font-size: 1.5rem;
+    }
+}
+
+}
+
+.backnumbers{
+    margin-left: 200px;
+    background-color: #f8f8f8;
+    @include mq{
+        margin-left: 0;
+    }
+
+    &-title{
+        font-size: 20px;
+        font-weight: bold;
+        padding: 50px 30px; 
+    }
+
+    &-title p{
+        margin-top: -10px;
+        margin-bottom: -10px;
+        font-size: 1.5rem;
+        font-weight: normal;
+        @include mq{
+            font-size: 1.2rem;
+        }
+    }
+
+    &-title p:last-of-type{
+       font-size: 0.75rem;
+       font-weight: normal;
+    }
+
+    &-list ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include mq{
+            display: block;
+        }
+    }
+    
+    &-list ul li {
+        width: 100%; 
+
+        @include mq{  
+        padding: 20px;
+    }  
+        }
+
+        &-list ul li:first-of-type{
+            background-color: #ecf4f9;
+        }
+        &-list ul li:nth-of-type(2){
+            background-color:#fbf3d2
+        }
+        &-list ul li:nth-of-type(3){
+            background-color:#f9f2eb
+        }
+        &-list ul li:nth-of-type(4){
+            background-color:#fae8c2
+        }
+        &-list ul li:nth-of-type(5){
+            background-color:#e2efe7
+        }
+        &-list ul li:last-of-type{
+            background-color:#f2f5fb
+        }
+
+    &-list ul li img{
+        width: 50%;
+        box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &-list-img{
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    &-list-txt{
+        margin: 60px auto;
+        padding: 0 40px;
+        
+
+        @include mq{
+            margin: 50px 0;
+        }
+}
+
+&-list-txt p:first-of-type{
+    font-size: 0.75rem;
+}
+&-list-txt p:nth-of-type(2){
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+&-list-txt p:last-of-type{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+}
+
